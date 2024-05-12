@@ -32,3 +32,10 @@
 *.app
 main
 .vscode
+runTests
+
+# CMake Stuff
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+
