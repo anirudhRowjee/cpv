@@ -16,7 +16,7 @@ class RingBuffer {
 
 public:
   // Constructor that initializes the Ringbuffer
-  RingBuffer(int maxcap = 1);
+  explicit RingBuffer(int max_cap = 1);
   // Destructor
   ~RingBuffer();
   // "Write to the channel"; Returns status in int
@@ -28,10 +28,10 @@ public:
   void _debug_stringdump();
 
 private:
-  int max_capacity; // Maximum Capacity of the ringbuffer
-  Node *HEAD;       // Pointer to the current HEAD of the ringbuffer queue
-  Node *TAIL;       // Pointer to the current tail of the ringbuffer queue
-  Node *ROOT;       // Fixed pointer to the root of the ringbuffer
-  bool isfull;      // Boolean indicator to tell if the list is full
+  int max_capacity = 0; // Maximum Capacity of the ringbuffer
+  Node *HEAD = nullptr;       // Pointer to the current HEAD of the ringbuffer queue
+  Node *TAIL = nullptr;       // Pointer to the current tail of the ringbuffer queue
+  Node *ROOT = nullptr;       // Fixed pointer to the root of the ringbuffer
+  bool isfull = false;      // Boolean indicator to tell if the list is full
   std::mutex ringbuf_mutex; // Mutex for concurrent access
 };

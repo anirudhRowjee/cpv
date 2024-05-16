@@ -34,6 +34,10 @@ int main() {
   // Set the init timestamp
   time(&timer_prev);
 
+  // Declare a Lambda
+  auto test_func = [](int a){ std::cout<< "Hello " << a << std::endl;};
+  test_func(1);
+
   // Basic 8-byte echo
   while (true) {
     getline(cin, input);

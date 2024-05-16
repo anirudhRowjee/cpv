@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/anirudh/projects/cpv
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/anirudh/projects/cpv
+CMAKE_BINARY_DIR = /home/anirudh/projects/cpv/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anirudh/projects/cpv/CMakeFiles /home/anirudh/projects/cpv//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anirudh/projects/cpv/build/CMakeFiles /home/anirudh/projects/cpv/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anirudh/projects/cpv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anirudh/projects/cpv/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -142,12 +142,50 @@ runTests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
 .PHONY : runTests/fast
 
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+main.o: main.cc.o
+.PHONY : main.o
+
+# target to build an object file
+main.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.o
+.PHONY : main.cc.o
+
+main.i: main.cc.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.i
+.PHONY : main.cc.i
+
+main.s: main.cc.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.s
+.PHONY : main.cc.s
+
 ringbuffer.o: ringbuffer.cc.o
 .PHONY : ringbuffer.o
 
 # target to build an object file
 ringbuffer.cc.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBuffer.dir/build.make CMakeFiles/RingBuffer.dir/ringbuffer.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ringbuffer.cc.o
 .PHONY : ringbuffer.cc.o
 
 ringbuffer.i: ringbuffer.cc.i
@@ -156,6 +194,7 @@ ringbuffer.i: ringbuffer.cc.i
 # target to preprocess a source file
 ringbuffer.cc.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBuffer.dir/build.make CMakeFiles/RingBuffer.dir/ringbuffer.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ringbuffer.cc.i
 .PHONY : ringbuffer.cc.i
 
 ringbuffer.s: ringbuffer.cc.s
@@ -164,6 +203,7 @@ ringbuffer.s: ringbuffer.cc.s
 # target to generate assembly for a file
 ringbuffer.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBuffer.dir/build.make CMakeFiles/RingBuffer.dir/ringbuffer.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ringbuffer.cc.s
 .PHONY : ringbuffer.cc.s
 
 simple_tests.o: simple_tests.cpp.o
@@ -199,7 +239,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... RingBuffer"
+	@echo "... main"
 	@echo "... runTests"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... ringbuffer.o"
 	@echo "... ringbuffer.i"
 	@echo "... ringbuffer.s"

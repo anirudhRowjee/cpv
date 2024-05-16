@@ -38,4 +38,5 @@ runTests
 CMakeCache.txt
 CMakeFiles/
 *.cmake
-
+build.ninja
+cmake_install.cmake

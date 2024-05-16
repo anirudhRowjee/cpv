@@ -1,11 +1,11 @@
 #include "ringbuffer.h"
 
-RingBuffer::RingBuffer(int maxcap) {
+RingBuffer::RingBuffer(int max_cap) {
   // Ensure that the mutex is locked as we construct it
   const std::lock_guard<std::mutex> lock(ringbuf_mutex);
 
-  max_capacity = maxcap;
-  int tracker = maxcap;
+  max_capacity = max_cap;
+  int tracker = max_cap;
 
   Node *starter_node = new Node;
   starter_node->next = starter_node; // Ouroboros?

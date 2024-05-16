@@ -1,4 +1,4 @@
-#include "ringbuffer.h"
+#include "ringbuffer/ringbuffer.h"
 #include <gtest/gtest.h>
 
 TEST(RingBufferTests, RingBufferInitalizesDefaultArg) {
